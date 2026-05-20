@@ -30,3 +30,12 @@ class BasePage:
             return True
         except:
             return False
+    
+    def click_dynamic(self, locator, index):
+
+        dynamic_locator = (
+        locator[0],
+        locator[1].format(index)
+        )
+
+        self.click(dynamic_locator)
