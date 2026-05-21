@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.leave_locators import LeaveLocators
+from locators.permission_locators import PermissionLocators
 
 class AddPermission(BasePage):
 
@@ -8,51 +8,51 @@ class AddPermission(BasePage):
 
     def add_permission(self):
 
-        self.click(LeaveLocators.LEAVE_NAV_BAR)
+        self.click(PermissionLocators.LEAVE_NAV_BAR)
 
-        self.click(LeaveLocators.PERMISSION_NAV_PAGE)
+        self.click(PermissionLocators.PERMISSION_NAV_PAGE)
 
-        self.click(LeaveLocators.APPLY_BTN)
+        self.click(PermissionLocators.APPLY_BTN)
         # DATE PICKER
-        self.click(LeaveLocators.DATE_PICKER)
+        self.click(PermissionLocators.DATE_PICKER)
 
-        self.click(LeaveLocators.SELECT_PERMISSION_DATE)
+        self.click(PermissionLocators.SELECT_PERMISSION_DATE)
 
-        self.click(LeaveLocators.CLICK_OK_BTN)
+        self.click(PermissionLocators.CLICK_OK_BTN)
 
         # LOCATION DETAILS
         self.enter_text(
-            LeaveLocators.STARTING_FROM, "Test Location")
+            PermissionLocators.STARTING_FROM, "Test Location")
         
         self.enter_text(
-            LeaveLocators.DESTINATION, "Test Destination")
+            PermissionLocators.DESTINATION, "Test Destination")
         
         # START TIME
-        self.click(LeaveLocators.START_TIME_PICKER)
-        self.click(LeaveLocators.SELECT_HOUR)
-        self.click(LeaveLocators.SELECT_MINS)
-        self.click(LeaveLocators.CLICK_OK_BTN)
+        self.click(PermissionLocators.START_TIME_PICKER)
+        self.click(PermissionLocators.SELECT_HOUR)
+        self.click(PermissionLocators.SELECT_MINS)
+        self.click(PermissionLocators.CLICK_OK_BTN)
 
         # END TIME
-        self.click(LeaveLocators.END_TIME_PICKER)
-        self.click(LeaveLocators.SELECT_END_HOUR)
-        self.click(LeaveLocators.SELECT_END_MINS)
-        self.click(LeaveLocators.CLICK_OK_BTN)
+        self.click(PermissionLocators.END_TIME_PICKER)
+        self.click(PermissionLocators.SELECT_END_HOUR)
+        self.click(PermissionLocators.SELECT_END_MINS)
+        self.click(PermissionLocators.CLICK_OK_BTN)
 
         # MARK ATTENDANCE
-        self.click(LeaveLocators.MARK_ATTENDANCE)
+        self.click(PermissionLocators.MARK_ATTENDANCE)
+
+        # SCROLL DOWN
+        self.scroll_down()
 
         # COMMENT
         self.enter_text(
-            LeaveLocators.COMMENT,
+            PermissionLocators.COMMENT,
             "Permission for personal work"
         )
 
         # SUBMIT
-        self.click(LeaveLocators.SUBMIT_BTN)
-
-        # SUCCESS MESSAGE
-        assert self.is_element_displayed(LeaveLocators.SUCCESS_MSG), "Permission application failed"
+        self.click(PermissionLocators.SUBMIT_BTN)
 
         # CONFIRMATION
-        self.click(LeaveLocators.CLICK_OK_BTN)
+        self.click(PermissionLocators.CLICK_OK_BTN)

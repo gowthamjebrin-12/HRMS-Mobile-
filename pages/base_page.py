@@ -39,3 +39,8 @@ class BasePage:
         )
 
         self.click(dynamic_locator)
+
+    def scroll_down(self):
+        self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
+                                'new UiScrollable(new UiSelector().scrollable(true)).scrollForward()'
+    )
