@@ -44,3 +44,8 @@ class BasePage:
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
                                 'new UiScrollable(new UiSelector().scrollable(true)).scrollForward()'
     )
+        
+    def scroll_up(self):
+        self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
+                                'new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()'
+    )
