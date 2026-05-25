@@ -17,3 +17,6 @@ class Config:
 
     APP_PACKAGE = os.getenv("APP_PACKAGE")
     APP_ACTIVITY = os.getenv("APP_ACTIVITY")
+
+    CURRENT_PASSWORD = os.getenv("CURRENT_PASSWORD")
+    NEW_PASSWORD = os.getenv("NEW_PASSWORD")

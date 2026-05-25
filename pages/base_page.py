@@ -31,15 +31,6 @@ class BasePage:
         except:
             return False
     
-    def click_dynamic(self, locator, index):
-
-        dynamic_locator = (
-        locator[0],
-        locator[1].format(index)
-        )
-
-        self.click(dynamic_locator)
-
     def scroll_down(self):
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
                                 'new UiScrollable(new UiSelector().scrollable(true)).scrollForward()'
@@ -49,3 +40,17 @@ class BasePage:
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
                                 'new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()'
     )
+        
+    def click_dynamic(self, locator, value):
+        by, path = locator
+        dynamic_locator = (by, path.format(value))
+        self.click(dynamic_locator)
+
+    
+    def click_by_index(self, locator, index):
+
+        elements = WebDriverWait(self.driver, 20).until(
+            lambda d: d.find_elements(*locator)
+        )
+
+        elements[index].click()
