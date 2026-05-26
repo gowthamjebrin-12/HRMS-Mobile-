@@ -11,8 +11,16 @@ class LeaveLocators:
     LEAVE_DROPDOWN = (AppiumBy.ANDROID_UIAUTOMATOR,
                       'new UiSelector().className("com.horcrux.svg.SvgView").instance(1)')
     
-    OPTION = (AppiumBy.ANDROID_UIAUTOMATOR,
-              'new UiSelector().text("")')
+    # OPTION = (AppiumBy.ANDROID_UIAUTOMATOR,
+    #           'new UiSelector().text("")')
+
+    def OPTION(text):
+        return (
+            AppiumBy.ANDROID_UIAUTOMATOR,
+            f'new UiSelector().text("{text}")'
+        )
+              
+    OPTION = (AppiumBy.ANDROID_UIAUTOMATOR,f'new UiSelector().text("{text}")')
     
     DATE_FIELD =  (AppiumBy.ANDROID_UIAUTOMATOR,
                     'new UiSelector().className("com.horcrux.svg.RectView").instance({})')
@@ -31,8 +39,4 @@ class LeaveLocators:
     
     SUBMIT_BTN = (AppiumBy.ANDROID_UIAUTOMATOR,
                   'new UiSelector().text("Submit Application")')
-    
-    def Option(text):
-        return (AppiumBy.ANDROID_UIAUTOMATOR, f'new UiSelector().text("{text}")')
-    
     

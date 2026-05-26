@@ -17,10 +17,9 @@ class ApplyCasualLeave(BasePage):
 
         self.click(LeaveLocators.LEAVE_DROPDOWN)
 
-        self.click(Option("Casual Leave"))
+        self.click(LeaveLocators.OPTION("Casual Leave"))
 
-
-        self.click(LeaveLocators.OPTION,format("Casual Leave"))
+        # self.click(LeaveLocators.OPTION,format("Casual Leave"))
         
         self.click_dynamic(LeaveLocators.DATE_FIELD, 0)
 
