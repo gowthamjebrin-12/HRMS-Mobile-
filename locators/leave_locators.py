@@ -11,28 +11,23 @@ class LeaveLocators:
     LEAVE_DROPDOWN = (AppiumBy.ANDROID_UIAUTOMATOR,
                       'new UiSelector().className("com.horcrux.svg.SvgView").instance(1)')
     
-    OPTION = (AppiumBy.ANDROID_UIAUTOMATOR,
-              'new UiSelector().text("")')
-    
+    EARNED_LEAVE = (AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("*").instance(1)')
+
+    CASUAL_LEAVE = (AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("Tap to pick date").instance(1)')
+        
     DATE_FIELD =  (AppiumBy.ANDROID_UIAUTOMATOR,
                     'new UiSelector().className("com.horcrux.svg.RectView").instance({})')
 
-    START_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                   '07 May 2026')
+    START_DATE = (AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("7")')
     
-    END_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                 '08 May 2026')
+    END_DATE = (AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("8")')
     
-    OK_BTN = (AppiumBy.ID,
-              'android:id/button1')
+    OK_BTN = (AppiumBy.ID,'android:id/button1')
     
     REASON_INPUT = (AppiumBy.CLASS_NAME,
                     'android.widget.EditText')
     
     SUBMIT_BTN = (AppiumBy.ANDROID_UIAUTOMATOR,
                   'new UiSelector().text("Submit Application")')
-    
-    def Option(text):
-        return (AppiumBy.ANDROID_UIAUTOMATOR, f'new UiSelector().text("{text}")')
     
     

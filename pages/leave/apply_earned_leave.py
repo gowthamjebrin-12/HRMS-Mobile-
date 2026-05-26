@@ -4,12 +4,12 @@ from locators.leave_locators import LeaveLocators
 import time
 
 
-class ApplyCasualLeave(BasePage):
+class ApplyEarnedLeave(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
 
-    def apply_casual_leave(self):
+    def apply_earned_leave(self):
 
         self.click(LeaveLocators.LEAVE_PAGE_NAV)
 
@@ -19,7 +19,7 @@ class ApplyCasualLeave(BasePage):
 
         time.sleep(2)
 
-        self.click(LeaveLocators.CASUAL_LEAVE)
+        self.click(LeaveLocators.EARNED_LEAVE)
         
         self.click_dynamic(LeaveLocators.DATE_FIELD, 0)
 

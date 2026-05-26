@@ -5,7 +5,7 @@ def test_logout(driver):
 
     login_page = LoginPage(driver)
     login_page.login(
-        "testemp@example.com",
+        "testemp1@example.com",
         "User@123"
     )
     

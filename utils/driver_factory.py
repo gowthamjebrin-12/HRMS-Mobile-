@@ -1,7 +1,7 @@
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
-from config.config import Config
+from utils.config import Config
 
 class DriverFactory:
 
