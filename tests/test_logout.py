@@ -1,12 +1,12 @@
 from pages.login.logout_page import LogoutPage
 from pages.login.login_page import LoginPage
+from utils.config import Config
 
 def test_logout(driver):
 
     login_page = LoginPage(driver)
     login_page.login(
-        "testemp1@example.com",
-        "User@123"
+        Config.EMP_USERNAME, Config.EMP_PASSWORD
     )
     
     logout_page = LogoutPage(driver)

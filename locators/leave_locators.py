@@ -30,4 +30,6 @@ class LeaveLocators:
     SUBMIT_BTN = (AppiumBy.ANDROID_UIAUTOMATOR,
                   'new UiSelector().text("Submit Application")')
     
+
+    
     

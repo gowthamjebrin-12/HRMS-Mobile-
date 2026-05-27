@@ -6,8 +6,8 @@ load_dotenv()
 
 class Config:
 
-    USERNAME = os.getenv("USERNAME")
-    PASSWORD = os.getenv("PASSWORD")
+    EMP_USERNAME = os.getenv("EMP_USERNAME")
+    EMP_PASSWORD = os.getenv("EMP_PASSWORD")
 
     APPIUM_URL = os.getenv("APPIUM_URL")
 

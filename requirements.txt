@@ -1,0 +1,6 @@
+Appium-Python-Client
+selenium
+pytest
+python-dotenv
+behave
+openpyxl

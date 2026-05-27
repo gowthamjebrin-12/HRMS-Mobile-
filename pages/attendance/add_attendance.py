@@ -45,3 +45,8 @@ class AddAttendance(BasePage):
 
         # SUBMIT
         self.click(AttendanceLocators.SUBMIT_BTN)
+
+    def is_attendance_added(self):
+        return self.is_displayed(
+            AttendanceLocators.ATTENDANCE_SUCCESS_MSG
+        )

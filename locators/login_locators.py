@@ -17,3 +17,7 @@ class LoginLocators:
     SIGN_IN_BTN = (AppiumBy.XPATH,
                    '//android.view.ViewGroup[@content-desc="Sign in"]'
     )
+
+    HOME_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                 'new UiSelector().text("Home")'
+    )

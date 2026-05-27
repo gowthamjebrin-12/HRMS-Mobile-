@@ -17,3 +17,6 @@ class LoginPage(BasePage):
         self.enter_text(LoginLocators.PASSWORD, password)
 
         self.click(LoginLocators.SIGN_IN_BTN)
+    
+    def is_login_successful(self):
+        return self.is_displayed(LoginLocators.HOME_PAGE)

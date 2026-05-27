@@ -15,7 +15,7 @@ class AttendanceLocators:
     )
 
     SELECT_START_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                         '01 May 2026'
+                         '12 May 2026'
     )
     
     END_DATE = (AppiumBy.ANDROID_UIAUTOMATOR,
@@ -23,7 +23,7 @@ class AttendanceLocators:
     )
 
     SELECT_END_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                       '03 May 2026'
+                       '12 May 2026'
     )
 
     OK_BTN = (AppiumBy.ID,
@@ -61,3 +61,8 @@ class AttendanceLocators:
     SUBMIT_BTN = (AppiumBy.ACCESSIBILITY_ID,
                  'Apply'
     )
+
+    def ATTENDANCE_SUCCESS_MSG(self):
+        return (AppiumBy.ANDROID_UIAUTOMATOR,
+                'new UiSelector().resourceId("android:id/message")'
+        )
