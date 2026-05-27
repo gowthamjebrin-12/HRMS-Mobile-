@@ -38,3 +38,6 @@ class ApplyEarnedLeave(BasePage):
         self.click(LeaveLocators.SUBMIT_BTN)
 
         self.click(LeaveLocators.OK_BTN)
+    
+    def is_visible_earned_leave(self):
+        return self.is_displayed(LeaveLocators.LEAVE_PAGE)

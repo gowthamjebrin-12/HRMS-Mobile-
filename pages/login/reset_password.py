@@ -21,4 +21,8 @@ class ResetPasswordPage(BasePage):
         self.click(ResetPasswordLocators.UPDATE_BTN)
 
         self.click(ResetPasswordLocators.OK_BTN)
+    
+    def is_visible_success_message(self):
+        return self.is_displayed(ResetPasswordLocators.HOME_PAGE)
+
 

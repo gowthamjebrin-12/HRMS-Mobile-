@@ -1,7 +1,7 @@
 from behave import given, when, then
 from pages.attendance.add_attendance import AddAttendance
 
-@given('I am logged into the HRMS application')
+@given('I am on attendance page')
 def step_impl(context):
     pass
 
@@ -12,4 +12,4 @@ def step_add_attendance(context):
 
 @then('I should see attendance added successfully')
 def step_verify_attendance_added(context):
-    assert context.add_attendance.is_attendance_added(), "Attendance was not added successfully"
+    assert context.add_attendance.is_visible_attendance(), "Attendance was not added successfully"

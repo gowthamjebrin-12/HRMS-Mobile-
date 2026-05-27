@@ -56,3 +56,6 @@ class AddPermission(BasePage):
 
         # CONFIRMATION
         self.click(PermissionLocators.CLICK_OK_BTN)
+
+    def is_visible_permission(self):
+        return self.is_displayed(PermissionLocators.PERMISSION_PAGE)

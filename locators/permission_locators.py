@@ -16,8 +16,8 @@ class PermissionLocators:
                  'new UiSelector().text("+ Apply")'
     )
 
-    DATE_PICKER = (AppiumBy.CLASS_NAME,
-                   'com.horcrux.svg.RectView'
+    DATE_PICKER = (AppiumBy.ANDROID_UIAUTOMATOR,
+                   'new UiSelector().className("com.horcrux.svg.SvgView").instance(1)'
     )
 
     SELECT_PERMISSION_DATE = (AppiumBy.ACCESSIBILITY_ID,
@@ -60,5 +60,9 @@ class PermissionLocators:
 
     SUBMIT_BTN = (AppiumBy.ANDROID_UIAUTOMATOR,
                   'new UiSelector().text("Submit Application")'
+    )
+
+    PERMISSION_PAGE = (AppiumBy.ACCESSIBILITY_ID,
+                       'Permissions'
     )
 

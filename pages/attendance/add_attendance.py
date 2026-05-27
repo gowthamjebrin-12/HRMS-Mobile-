@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from locators.attendance_locators import AttendanceLocators
+import time
 
 class AddAttendance(BasePage):
     def __init__(self, driver):
@@ -46,7 +47,7 @@ class AddAttendance(BasePage):
         # SUBMIT
         self.click(AttendanceLocators.SUBMIT_BTN)
 
-    def is_attendance_added(self):
-        return self.is_displayed(
-            AttendanceLocators.ATTENDANCE_SUCCESS_MSG
-        )
+        self.click(AttendanceLocators.OK_BTN)
+
+    def is_visible_attendance(self):
+        return self.is_displayed(AttendanceLocators.ATTENDANCE_PAGE)

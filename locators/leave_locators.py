@@ -30,6 +30,10 @@ class LeaveLocators:
     SUBMIT_BTN = (AppiumBy.ANDROID_UIAUTOMATOR,
                   'new UiSelector().text("Submit Application")')
     
+    LEAVE_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                  'new UiSelector().text("Leave history").instance(0)'
+    )
+    
 
     
     

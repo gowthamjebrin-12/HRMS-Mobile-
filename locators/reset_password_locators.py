@@ -20,3 +20,6 @@ class ResetPasswordLocators:
                   'new UiSelector().text("Update Password")')
     
     OK_BTN =  (AppiumBy.ID,'android:id/button1')
+
+    HOME_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                 'new UiSelector().text("Home")')
