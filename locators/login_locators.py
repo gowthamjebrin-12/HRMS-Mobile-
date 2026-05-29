@@ -21,3 +21,20 @@ class LoginLocators:
     HOME_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
                  'new UiSelector().text("Home")'
     )
+
+    INVALID_USER_MAIL = (AppiumBy.ANDROID_UIAUTOMATOR,
+                         'new UiSelector().text("Please enter a valid email address")'
+    )
+
+    EMPTY_USER_MAIL = (AppiumBy.ANDROID_UIAUTOMATOR,
+                       'new UiSelector().text("Please enter your work email")'
+    )
+
+    INVALID_PASSWORD = (AppiumBy.ANDROID_UIAUTOMATOR,
+                        'new UiSelector().text("Invalid email or password")'
+    )
+    
+    EMPTY_PASSWORD = (AppiumBy.ANDROID_UIAUTOMATOR,
+                      'new UiSelector().text("Please enter your password")'
+    )
+    
