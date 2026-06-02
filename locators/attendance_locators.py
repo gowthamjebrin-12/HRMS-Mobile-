@@ -15,7 +15,7 @@ class AttendanceLocators:
     )
 
     SELECT_START_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                         '15 May 2026'
+                         '01 June 2026'
     )
     
     END_DATE = (AppiumBy.ANDROID_UIAUTOMATOR,
@@ -23,7 +23,7 @@ class AttendanceLocators:
     )
 
     SELECT_END_DATE = (AppiumBy.ACCESSIBILITY_ID,
-                       '16 May 2026'
+                       '01 June 2026'
     )
 
     OK_BTN = (AppiumBy.ID,

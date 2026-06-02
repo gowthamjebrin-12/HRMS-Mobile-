@@ -10,6 +10,8 @@ from negative_scenarios.login_scenario.login_negative import LoginScenarios
 @given('I launch the HRMS mobile application')
 def launch_hrms_app(context):
     context.login_page = LoginPage(context.driver)
+    context.login_scenario = LoginScenarios(context.driver)
+
     
 @when('I login with valid username and password')
 def login_with_valid_credentials(context):
@@ -23,10 +25,6 @@ def verify_successful_login(context):
 #----------------------------------
 # NEGATIVE SCENARIO 1: Invalid Email Format
 #----------------------------------
-@given('I launch the HRMS mobile application for negative scenarios')
-def launch_hrms_app_negative(context):
-    context.login_scenario = LoginScenarios(context.driver)
-
 @when('I login with username "invalid_email"')
 def login_with_invalid_credentials(context):
     context.login_scenario.execute()
@@ -89,5 +87,46 @@ def verify_empty_password_error(context):
 
 
 #----------------------------------
-# NEGATIVE SCENARIO 5: Login Without Network
+# NEGATIVE SCENARIO 5: Password retention after back navigation
 #----------------------------------
+@given('I launch the HRMS mobile application for negative scenarios - 5')
+def launch_hrms_app_negative_5(context):
+    context.login_scenario = LoginScenarios(context.driver)
+
+@when('I enter valid password')
+def enter_valid_password(context):
+    context.login_scenario.execute_password_retention(context.password)
+
+@when('I click the back button')
+def click_back_button(context):
+    context.login_scenario.click_back_button()
+
+@then('I should see welcome page')
+def welcome_page_displayed(context):
+    assert context.login_scenario.is_welcome_page_displayed(), "Welcome page is not displayed after clicking back button"
+
+@when('I click the continue button')
+def click_continue_button(context):
+    context.login_scenario.click_continue_after_back()
+
+@then('I should see the login page')
+def login_page_displayed(context):
+    assert context.login_scenario.is_login_page_displayed(), "Login page is not displayed after clicking continue button"
+
+@then('I should see the password field should be empty')
+def verify_password_retention(context):
+    assert context.login_scenario.is_password_field_empty(), "Password field is not empty after navigating back and continue"
+
+
+#----------------------------------
+# NEGATIVE SCENARIO 5: Multiple Failed Login Attempts
+#----------------------------------
+
+@given('I launch the HRMS mobile application for negative scenarios - 6')
+def launch_hrms_app_negative_6(context):
+    context.login_scenario = LoginScenarios(context.driver)
+
+@when('I click the sign in btn multiple times')
+def click_sign_in_multiple_times(context):
+    context.login_scenario.execute_multiple_failed_logins()
+

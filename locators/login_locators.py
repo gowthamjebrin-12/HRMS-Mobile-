@@ -38,3 +38,14 @@ class LoginLocators:
                       'new UiSelector().text("Please enter your password")'
     )
     
+    LOGIN_BACK = (AppiumBy.ANDROID_UIAUTOMATOR,
+                  'new UiSelector().text("← Back")'
+    )
+
+    WELCOME_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("Welcome to HRMS")'
+    )
+
+    LOGIN_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                  'new UiSelector().text("Welcome back")'
+    )

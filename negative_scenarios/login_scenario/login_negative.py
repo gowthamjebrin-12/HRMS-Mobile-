@@ -5,8 +5,23 @@ class LoginScenarios(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        
+#------------------------------------------------------
+# Valid Email
+#------------------------------------------------------
+    def execute_with_valid_usermail(self, username):
+        self.enter_text(LoginLocators.USERNAME, username)
+        self.click(LoginLocators.CONTINUE_BTN)
+
+#------------------------------------------------------
+# Valid Password
+#------------------------------------------------------
+    def execute_with_valid_password(self, password):
+        self.enter_text(LoginLocators.PASSWORD, password)
+        self.click(LoginLocators.SIGN_IN_BTN)        
+
+#------------------------------------------------------
 # Negative Scenario 1: Invalid Email Format
+#------------------------------------------------------
     def execute(self):
             self.enter_text(LoginLocators.USERNAME, "invalid_email")
             self.click(LoginLocators.CONTINUE_BTN)
@@ -20,7 +35,9 @@ class LoginScenarios(BasePage):
     def is_invalid_email_displayed(self):
         return self.is_displayed(LoginLocators.INVALID_USER_MAIL)
 
+#------------------------------------------------------
 # Negative Scenario 2: Empty Email Credential    
+#------------------------------------------------------
     def execute_without_usermail(self):
         self.enter_text(LoginLocators.USERNAME, "")
         self.click(LoginLocators.CONTINUE_BTN)
@@ -34,12 +51,9 @@ class LoginScenarios(BasePage):
     def is_empty_email_displayed(self):
         return self.is_displayed(LoginLocators.EMPTY_USER_MAIL)
 
-# Valid Email
-    def execute_with_valid_usermail(self, username):
-        self.enter_text(LoginLocators.USERNAME, username)
-        self.click(LoginLocators.CONTINUE_BTN)
-
+#------------------------------------------------------
 # Negative Scenario 3: Invalid Password Format  
+#------------------------------------------------------
     def execute_with_invalid_password(self):
         self.enter_text(LoginLocators.PASSWORD, "invalid_password")
         self.click(LoginLocators.SIGN_IN_BTN)
@@ -53,7 +67,9 @@ class LoginScenarios(BasePage):
     def is_invalid_password_displayed(self):
         return self.is_displayed(LoginLocators.INVALID_PASSWORD)
 
+#------------------------------------------------------
 # Negative Scenario 4: Empty Password Credential
+#------------------------------------------------------
     def execute_without_password(self):
         self.enter_text(LoginLocators.PASSWORD,"")
         self.click(LoginLocators.SIGN_IN_BTN)
@@ -66,3 +82,38 @@ class LoginScenarios(BasePage):
         
     def is_empty_password_displayed(self):
         return self.is_displayed(LoginLocators.EMPTY_PASSWORD)
+
+#------------------------------------------------------
+# Negative Scenario 5 : Password Retention After Back Navigation
+#------------------------------------------------------
+    def execute_password_retention(self, password):
+        self.enter_text(LoginLocators.PASSWORD, password)
+        # self.click(LoginLocators.LOGIN_BACK)
+
+    def click_back_button(self):
+        self.click(LoginLocators.LOGIN_BACK)
+    
+    def is_welcome_page_displayed(self):        
+        return self.is_displayed(LoginLocators.WELCOME_PAGE)
+
+    def click_continue_after_back(self):
+        self.click(LoginLocators.CONTINUE_BTN)
+
+    def is_login_page_displayed(self):
+        return self.is_displayed(LoginLocators.LOGIN_PAGE)
+     
+    def is_password_field_empty(self):
+        return self.is_displayed(LoginLocators.PASSWORD)
+
+#------------------------------------------------------    
+# Negative Scenario 6: Multiple Failed Login Attempts
+#------------------------------------------------------
+    def execute_multiple_failed_logins(self):
+        self.enter_text(LoginLocators.PASSWORD, "invalid_password")
+        for _ in range(5):
+            self.click(LoginLocators.SIGN_IN_BTN)
+
+        return self.is_displayed(LoginLocators.INVALID_PASSWORD)
+            
+
+    

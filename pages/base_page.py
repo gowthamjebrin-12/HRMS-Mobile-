@@ -64,4 +64,16 @@ class BasePage:
         except:
             return False
 
+    def get_attribute(self, locator, attribute):
+        element = self.driver.find_element(*locator)
+        return element.get_attribute(attribute)
     
+    def clear_text(self, locator):
+        element = self.driver.find_element(*locator)
+        element.clear()
+
+    def is_enabled(self, locator):
+        element = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located(locator)
+        )
+        return element.is_enabled()

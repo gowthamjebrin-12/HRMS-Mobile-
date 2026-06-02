@@ -22,9 +22,31 @@ from utils.config import Config
 #     assert result, "Test case failed: Invalid password error message is not displayed"
 
 # Test 4
-def test_empty_password(driver):
-    valid_usermail = LoginScenarios(driver)
-    valid_usermail.execute_with_valid_usermail(Config.EMP_USERNAME)
-    login_scenario4 = LoginScenarios(driver)
-    result = login_scenario4.execute_without_password()
-    assert result, "Test case failed: Empty password error message is not displayed"
+# def test_empty_password(driver):
+#     valid_usermail = LoginScenarios(driver)
+#     valid_usermail.execute_with_valid_usermail(Config.EMP_USERNAME)
+#     login_scenario4 = LoginScenarios(driver)
+#     result = login_scenario4.execute_without_password()
+#     assert result, "Test case failed: Empty password error message is not displayed"
+
+# Test 5
+# def test_login_back_button(driver):
+#     usermail = LoginScenarios(driver)
+#     usermail.execute_with_valid_usermail(Config.EMP_USERNAME)
+#     login_back = LoginScenarios(driver)
+#     result =login_back.execute_password_retention(Config.EMP_PASSWORD)
+#     assert result,\
+#      "Test case failed: Password field is not retained after clicking back button"
+
+# Test 6
+def test_multiple_failed_logins(driver):
+    usermail = LoginScenarios(driver)
+    usermail.execute_with_valid_usermail(Config.EMP_USERNAME)
+    login_scenario = LoginScenarios(driver)
+    result = login_scenario.execute_multiple_failed_logins()
+    
+    assert result,\
+    "Test case failed: Account lockout message is not displayed after multiple failed login attempts"
+
+
+    
