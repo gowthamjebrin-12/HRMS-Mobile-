@@ -66,4 +66,46 @@ class AttendanceLocators:
                 'new UiSelector().text("Attendance").instance(0)'
     )
 
-   
+    ATTENDANCE_HISTORY_PAGE = (AppiumBy.ANDROID_UIAUTOMATOR,
+                               'new UiSelector().text("Attendance History")'
+    )    
+    
+    REQUEST_PENDING = (AppiumBy.ANDROID_UIAUTOMATOR,
+                       'new UiSelector().text("PENDING").instance(0)'
+    )
+
+    END_DATE_EARLIER_THAN_START_DATE = (AppiumBy.ACCESSIBILITY_ID,
+                         '02 June 2026'
+    )
+
+    INVALID_DATE = (AppiumBy.ACCESSIBILITY_ID,
+                    'Invalid Date Range'
+    )
+
+    INVALID_TIME = (AppiumBy.ACCESSIBILITY_ID,
+                    'Invalid Time Range'
+    )
+    
+    END_TIME__EARLIER_THAN_START_TIME = (AppiumBy.ANDROID_UIAUTOMATOR,
+                   'new UiSelector().className("com.horcrux.svg.CircleView").instance(0)'
+    )
+
+    ALERT_MESSAGE = (AppiumBy.ID,
+                     'com.hrmsmobile:id/alertTitle')
+    
+    CHECK_IN_EARLY_TIME = (AppiumBy.ACCESSIBILITY_ID,
+                     '18'
+    )
+
+    CHECK_IN_EARLY_MINS = (AppiumBy.ACCESSIBILITY_ID,
+                     '0'
+    )
+
+    CHECK_OUT_EARLY_TIME = (AppiumBy.ACCESSIBILITY_ID,
+                      '9'  
+    )
+
+    CHECK_OUT_EARLY_MINS = (AppiumBy.ACCESSIBILITY_ID,
+                      '0'
+    )
+
